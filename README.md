@@ -1,7 +1,8 @@
 nox
 ===
 
-Nox (Style for the Textual IRC Client)
+Nox (Style for the Textual IRC Client)  
+Based on [Whisper Dark, by Shamil Nunchuck](https://github.com/shamil-nunhuck/textual-whisper-dark)
 
 Instructions to install:  
 1.  Download the files via Git or the download button to the right.  
