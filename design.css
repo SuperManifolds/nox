@@ -1,0 +1,610 @@
+/* Basic Body Structure */
+
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	word-wrap: break-word;
+}	
+
+body {
+	color: #fff;
+	height: 100%;
+ 	z-index: 100;
+	font-size: 12px;
+	overflow: hidden;
+	overflow-y: visible;
+	background-color: #232323;
+	font-family: "Roboto";
+    font-weight: 200;
+}
+
+#body_home {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 100;
+	max-height: 99.99%;
+	position: absolute;
+	opacity: 0; /* Set by JavaScript */
+	-webkit-transition: opacity 0.8s linear;
+}
+
+#body_home {
+	max-height: 96.5%;
+}
+
+body .line {
+ 	border-bottom: 1px solid #181818;
+}
+
+body[dir=rtl] .sender {
+	display: inline-block;
+}
+
+/* Hide some internal stuff. */
+#timestampWidth {
+	display: none;
+}
+
+/* Loading Screen */
+
+#loading_screen {
+	position:absolute; 
+	top: 50%;
+	left: 50%;
+	margin-top: -11px;
+	margin-left: -150px;
+	width: 300px;
+	height: 21px;
+	font-size: 18px;
+	background: #f3f3f3;
+	border: 1px solid #d7d7d7;
+	border-radius: 5px;
+	padding: 5px;
+	padding-left: 10px;
+	opacity: 1; /* Set by JavaScript */
+	-webkit-transition: opacity 0.8s linear;
+}
+
+/* Time */
+
+body[dir=ltr] .time {
+    font-size: 10px !important;
+	white-space: nowrap;
+	float: right;
+	color: #999;
+	-webkit-user-select: none;
+	font-weight: bold;
+	margin-right: 10px;
+	line-height: 22px;
+	font-style: normal;
+	text-align: right;
+}
+
+/* Encryption Lock */
+
+.encryptionLock img {
+	float: right;
+	margin: 0;
+	padding: 0;
+	height: 11px;
+	margin-top: 2px;
+	padding-left: 10px;
+}
+
+/* Links */
+
+a {
+	color: #ccc;
+    border-color: #ccc;
+	text-decoration: none;
+	border-bottom: dotted 1px;
+    
+}
+
+a:hover {
+	color: #64a5ff;
+	border-color: #64a5ff;
+}
+
+/* Topic Bar */
+
+#topic_bar {
+	top: 0;
+	left: 0;
+	right: 0;
+	padding-bottom: 5px;
+	opacity: 0; /* Set by JavaScript */
+	z-index: 400;
+	color: #dddddd;
+	position: fixed;
+	padding: 6px 0.5em 7px;
+	box-shadow: 0 1px 5px #777;
+	border-bottom: 1px solid #404040;
+	text-shadow: 1px 1px rgba(10, 10, 10, 0.7);
+	background: rgba(50,50,50,0.9);
+}
+
+#topic_bar a, 
+#topic_bar .channel {
+	color: #64a5ff;
+	border-color: #64a5ff;
+	text-shadow: 1px 1px rgba(10, 10, 10, 0.7);
+}
+
+
+/* Images */
+
+body a img {
+	border-left: 143px solid #000;
+	margin-left:-148px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+
+body img {
+	display: block;
+	max-width: 95%;
+	/* margin: 15px 15px 12px 15px; */
+}
+
+/* Remember Line */
+
+div[id=mark] {
+	position: relative;
+	z-index: 295;
+	margin-top: -1px;
+	border-bottom: 1px solid;
+	border-color: #444;
+	-webkit-transition: 0.2s linear;
+}
+
+/* Historic / Log readback */
+
+.historic {
+	font-weight: 200;
+	-webkit-filter: grayscale(75%);
+}
+
+/* NOTICE/CTCP/WALLOPS */
+
+body div.line[ltype=ctcp],
+body div.line[ltype=notice],
+body div.line[ltype=wallops] {
+  	z-index: 191;
+  	position: relative;
+ 	padding: 2px 5px 2px 5px;
+	background-color: #30486c;
+	border-bottom: none;
+	border-top: none;
+	border-left: none;
+}
+
+body div[ltype=notice] .sender {
+	color: #f00;
+	font-weight: 700;
+}
+
+/* PRIVMSG */
+
+body div.line[ltype=privmsg][highlight=false] {
+	padding: 0;
+}
+
+body div.line[ltype=action][highlight=true],
+body div.line[ltype=privmsg][highlight=true] {
+	background-color: #38694c;
+	border-bottom: none;
+	border-top: none;
+	border-left: none;
+}
+
+body div.line[ltype=action][highlight=true] .message {
+	color: #fff;
+}
+
+body div[ltype="privmsg"] .message {
+    word-wrap: break-word;
+    word-break: break-all;
+    display: inline-block;
+	color: #fff;
+}
+
+body div[ltype=privmsg] p[ltype=myself] .message {
+	color: #fff;
+}
+
+body div[ltype=privmsg] .sender {
+	font-weight: 700;
+	width:134px;
+	background-color: #181818;
+	min-height:22px;
+	border-right: 1px solid rgb(64, 64, 64);
+	padding-right:5px;
+	text-align:right;
+	display:inline-block;
+	overflow: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	text-overflow: ellipsis;
+	
+}
+
+/* ACTION */
+
+body div.line[ltype=action] {
+	background-color: #181818;
+
+}
+
+body div[ltype="action"] .message {
+	color: #b359ff;
+}
+
+body div[ltype=action] .sender {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	font-weight: 700;
+	width:134px;
+	background-color: #181818;
+	height:22px;
+	padding-right:5px;
+	text-align:right;
+	display:inline-block;
+	overflow: auto;
+}
+
+body div[ltype=action] p[ltype=myself] .sender,
+body div[ltype=action] p[ltype=myself] .message {
+	color: #b359ff;
+}
+
+body[dir=ltr] div[ltype=action] .sender:before {
+	margin-right: 0.4em;
+}
+
+body[dir=ltr] div[ltype=action] .sender:after {
+	content: "";
+  	/* margin-right: 0.4em; */
+}
+
+body[dir=ltr] div[ltype=action] .sender:before {
+	content: "\2022";
+	margin-right: 0.4em;
+	color: #b359ff;
+}
+
+body[dir=rtl] div[ltype=action] .sender:after {
+	content: "";
+  	/* margin-left: 0.4em; */
+}
+
+/* DEBUG/INVITE */
+
+body div.line[ltype=invite],
+body div.line[ltype=debug],
+body div.line[ltype=rawhtml] {
+	color: #eee;
+  	z-index: 190;
+	background: #393939;
+  	position: relative;
+ 	padding: 2px 0 2px 5px;
+	border-top: 1px solid #868686;
+	border-bottom: 1px solid #868686;
+}
+
+/* Message of the Day (MOTD) */
+/* 720, 721, 722 are used by ShadowIRCd for Oper MOTD. */
+/* 372, 375, 376 are normal MOTD shared by several IRCds. */ 
+
+body div.line[command="372"],
+body div.line[command="721"] {
+	border: none;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+body div.line[command="375"],
+body div.line[command="720"] { /* Start. */
+	border-bottom: none;
+	padding-top: 2px;
+	padding-bottom: 3px;
+}
+
+body div.line[command="376"],
+body div.line[command="722"] { /* End. */
+	border-top: none;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+body div.line[command="372"] .message,
+body div.line[command="375"] .message,
+body div.line[command="376"] .message 
+body div.line[command="720"] .message,
+body div.line[command="721"] .message,
+body div.line[command="722"] .message {
+	font-family: "Menlo" !important;
+}
+
+/* GENERAL EVENT */
+
+body span.message {
+	position: relative;
+	padding-left: 145px;
+	display:table-cell;
+	vertical-align: middle;
+	min-height: 22px;
+	line-height: 22px;
+	width: calc(100% - 300px);
+    padding-right: 40px;
+}
+
+body div.event span.time {
+	color: #999;
+	line-height: 19px;
+}
+
+body div.event span.message {
+	min-height: 19px;
+	line-height: 19px;
+	padding-left: 0;
+}
+
+body div.line[ltype=join],
+body div.line[ltype=part],
+body div.line[ltype=quit],
+body div.line[ltype=mode],
+body div.line[ltype=topic],
+body div.line[ltype=website] {
+    font-size: 85%;
+	min-height: 19px;
+	padding-left: 125px;
+	color: #6b9dcb;
+    background: rgb(24,24,24);
+}
+
+body div.line[ltype=nick] {
+    font-size: 85%;
+	min-height: 19px;
+	padding-left: 125px;
+	color: #529567;
+    background: rgb(24,24,24);
+}
+
+body div.line[ltype=kill],
+body div.line[ltype=kick] {
+    font-size: 85%;
+	min-height: 19px;
+	padding-left: 125px;
+	color: #ec5151;
+    background: rgb(24,24,24);
+}
+
+body[dir=ltr] div[ltype=join] .message:before {
+	content: "→";
+  	color: #0c0;
+	margin-left:3px;
+    margin-right: 5px;
+}
+
+
+
+body[dir=ltr] div[ltype=kick] .message:before,
+body[dir=ltr] div[ltype=part] .message:before,
+body[dir=ltr] div[ltype=quit] .message:before {
+	content: "←";
+  	color: #e00;
+	margin-left:3px;
+    margin-right: 5px;
+}
+
+body[dir=ltr] div[ltype=nick] .message:before {
+	content: "\2022";
+	color: #37be34;
+	font-weight: 700;
+	margin-left: 8px;
+    margin-right: 5px;
+}
+
+body[dir=ltr] div[ltype=mode] .message:before {
+	content: "\2022";
+	color: #2cb6f6;
+	font-weight: 700;
+	margin-left: 8px;
+    margin-right: 5px;
+}
+
+body[dir=rtl] div[ltype=join] .message:before {
+	content: "→";
+  	color: #0c0;
+	margin-left:3px;
+    margin-right: 5px;
+}
+
+body[dir=rtl] div[ltype=kick] .message:before,
+body[dir=rtl] div[ltype=part] .message:before,
+body[dir=rtl] div[ltype=quit] .message:before {
+	content: "←";
+  	color: #e00;
+	margin-left:3px;
+    margin-right: 5px;
+}
+
+/* Nickname Colors */
+
+body .inline_nickname {
+	font-weight: 700;
+}
+
+
+
+body .sender[ltype=myself] { 
+	color: #9A60FF; 
+	margin-left:5px;
+}
+
+body .sender[ltype=normal] { 
+	margin-left:5px;
+}
+
+body .sender[ltype=normal][colornumber='0'], 
+body .inline_nickname[colornumber='0'] { 
+	color: #1B75BB; 
+}
+
+body .sender[ltype=normal][colornumber='1'], 
+body .inline_nickname[colornumber='1'] { 
+	color: #00A79D; 
+}
+
+body .sender[ltype=normal][colornumber='2'], 
+body .inline_nickname[colornumber='2'] { 
+	color: #006738; 
+}
+
+body .sender[ltype=normal][colornumber='3'], 
+body .inline_nickname[colornumber='3'] { 
+	color: #D91B5B; 
+}
+
+body .sender[ltype=normal][colornumber='4'], 
+body .inline_nickname[colornumber='4'] { 
+	color: #e17668; 
+}
+
+body .sender[ltype=normal][colornumber='5'], 
+body .inline_nickname[colornumber='5'] { 
+	color: #FBAF3F; 
+}
+
+body .sender[ltype=normal][colornumber='6'],
+body .inline_nickname[colornumber='6'] { 
+	color: #F05A28; 
+}
+
+body .sender[ltype=normal][colornumber='7'], 
+body .inline_nickname[colornumber='7'] { 
+	color: #EF4036; 
+}
+
+body .sender[ltype=normal][colornumber='8'],
+body .inline_nickname[colornumber='8'] { 
+	color: #FDD900; 
+}
+
+body .sender[ltype=normal][colornumber='9'], 
+body .inline_nickname[colornumber='9'] { 
+	color: #C39A6B; 
+}
+
+body .sender[ltype=normal][colornumber='10'], 
+body .inline_nickname[colornumber='10'] { 
+	color: #006882; 
+}
+
+body .sender[ltype=normal][colornumber='11'], 
+body .inline_nickname[colornumber='11'] { 
+	color: #6D6E70; 
+}
+
+body .sender[ltype=normal][colornumber='12'], 
+body .inline_nickname[colornumber='12'] { 
+	color: #BBBDC0; 
+}
+
+body .sender[ltype=normal][colornumber='13'], 
+body .inline_nickname[colornumber='13'] { 
+	color: #8CC63E; 
+}
+
+body .sender[ltype=normal][colornumber='14'], 
+body .inline_nickname[colornumber='14'] { 
+	color: #05BCD0; 
+}
+
+body .sender[ltype=normal][colornumber='15'], 
+body .inline_nickname[colornumber='15'] { 
+	color: #D0DD26;
+}
+
+body .sender[ltype=normal][colornumber='16'], 
+body .inline_nickname[colornumber='16'] { 
+	color: #B78A2D;
+}
+
+body .sender[ltype=normal][colornumber='17'], 
+body .inline_nickname[colornumber='17'] { 
+	color: #B0DFE2;
+}
+
+body .sender[ltype=normal][colornumber='18'], 
+body .inline_nickname[colornumber='18'] { 
+	color: #C4DE9A;
+}
+
+body .sender[ltype=normal][colornumber='19'], 
+body .inline_nickname[colornumber='19'] { 
+	color: #2A3386;
+}
+
+body .sender[ltype=normal][colornumber='20'], 
+body .inline_nickname[colornumber='20'] { 
+	color: #82705f;
+}
+
+body .sender[ltype=normal][colornumber='21'], 
+body .inline_nickname[colornumber='21'] { 
+	color: #A4509E;
+}
+
+body .sender[ltype=normal][colornumber='22'], 
+body .inline_nickname[colornumber='22'] { 
+	color: #cc3b27;
+}
+
+body .sender[ltype=normal][colornumber='23'], 
+body .inline_nickname[colornumber='23'] { 
+	color: #F8B7BA;
+}
+
+body .sender[ltype=normal][colornumber='24'], 
+body .inline_nickname[colornumber='24'] { 
+	color: #b8b998;
+}
+
+body .sender[ltype=normal][colornumber='25'], 
+body .inline_nickname[colornumber='25'] { 
+	color: #7FA8D9;
+}
+
+body .sender[ltype=normal][colornumber='26'], 
+body .inline_nickname[colornumber='26'] { 
+	color: #C4CF2E;
+}
+
+body .sender[ltype=normal][colornumber='27'], 
+body .inline_nickname[colornumber='27'] { 
+	color: #F9BDB4;
+}
+
+body .sender[ltype=normal][colornumber='28'], 
+body .inline_nickname[colornumber='28'] { 
+	color: #EDF1B8;
+}
+
+body .sender[ltype=normal][colornumber='29'], 
+body .inline_nickname[colornumber='29'] { 
+	color: #C3A3CD;
+}
+
+body .sender[ltype=normal][colornumber='30'], 
+body .inline_nickname[colornumber='30'] { 
+	color: #62479C;
+}
