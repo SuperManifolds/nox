@@ -66,5 +66,10 @@ function get_color(nick) {
     }
     // keep saturation above 20
     var s = 20 + Math.abs(nickhash) % 80;
+    
+    // Avoid muddy colours.
+    if (h < 110 && s < 60 && l < 40) {
+        l = 80;
+    }
     return "hsl(" + h + "," + s + "%," + l + "%)";
 }
