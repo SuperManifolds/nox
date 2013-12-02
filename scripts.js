@@ -21,6 +21,11 @@ Textual.newMessagePostedToView = function (line) {
         var selectNick = message.children[0].children[1].children[0];
         selectNick.removeAttribute('colornumber');
         selectNick.style.color = get_color(selectNick.getAttribute('nick'));
+        var inlineNicks = message.children[0].children[1].querySelectorAll('.inline_nickname');
+        for (var i = 0, len = inlineNicks.length; i < len; i++) {
+            inlineNicks[i].removeAttribute('colornumber');
+            inlineNicks[i].style.color = get_color(inlineNicks[i].innerHTML);
+        }
     }
 };
 
