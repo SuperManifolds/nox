@@ -69,7 +69,7 @@ function get_color(nick) {
     
     // Avoid muddy colours.
     if (h < 110 && s < 60 && l < 40) {
-        l = 80;
+        l = 60;
     }
     return "hsl(" + h + "," + s + "%," + l + "%)";
 }
