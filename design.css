@@ -84,14 +84,16 @@ body[dir=ltr] .time {
 }
 
 /* Encryption Lock */
+.encryptionLock {
+    float-right: 40px;
+}
 
 .encryptionLock img {
-	float: right;
-	margin: 0;
-	padding: 0;
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin:auto;
 	height: 11px;
-	margin-top: 2px;
-	padding-left: 10px;
 }
 
 /* Links */
@@ -191,6 +193,7 @@ body div[ltype=notice] .sender {
 
 body div.line[ltype=privmsg][highlight=false] {
 	padding: 0;
+    position: relative;
 }
 
 body div.line[ltype=action][highlight=true],
@@ -199,6 +202,7 @@ body div.line[ltype=privmsg][highlight=true] {
 	border-bottom: none;
 	border-top: none;
 	border-left: none;
+    position: relative;
 }
 
 body div.line[ltype=action][highlight=true] .message {
