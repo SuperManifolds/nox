@@ -67,6 +67,11 @@ function get_color(nick) {
     // keep saturation above 20
     var s = 20 + Math.abs(nickhash) % 80;
     
+    // Prevent text from becing unreadably high on dark themes on certain parts of the hues.
+    if (h >= 210 && s >= 80) {
+        s = s-20;
+    }
+    
     // Avoid muddy colours.
     if (h < 110 && s < 60) {
         l = 60;
