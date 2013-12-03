@@ -62,13 +62,13 @@ function get_color(nick) {
     // half of the hues are too light, for those we
     // decrease lightness
     if(h >= 30 && h <= 210) {
-        l = 30;
+        l = 40;
     }
     // keep saturation above 20
     var s = 20 + Math.abs(nickhash) % 80;
     
     // Avoid muddy colours.
-    if (h < 110 && s < 60 && l < 40) {
+    if (h < 110 && s < 60) {
         l = 60;
     }
     return "hsl(" + h + "," + s + "%," + l + "%)";
