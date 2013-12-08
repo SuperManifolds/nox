@@ -20,11 +20,10 @@ Textual.newMessagePostedToView = function (line) {
     if (message.getAttribute('ltype') == 'privmsg' || message.getAttribute('ltype') == 'action') {
         //Correct text wrapping programatically
         var messageContainer = message.children[0].children[1];
-        //Subtract nick indentation area and timestamp size from the line width
-        var calcWidth = (message.offsetWidth - message.children[0].children[0].offsetWidth);
-        console.log(calcWidth + "px !important;");
-        console.log(messageContainer);
-        messageContainer.style.width = calcWidth + "px !important;";
+        //Subtract nick indentation area and timestamp size (and 40px in padding) from the line width 
+        var calcWidth = (message.offsetWidth - message.children[0].children[0].offsetWidth - 210);
+        console.log(calcWidth.toString());
+        messageContainer.style.width = calcWidth.toString() + "px";
         
         //Start alternative nick colouring procedure
         var selectNick = messageContainer.children[0];
