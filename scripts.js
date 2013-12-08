@@ -15,6 +15,19 @@ Textual.viewFinishedReload = function() {
     Textual.viewFinishedLoading();
 };
 
+//Update text wrapping on window resize
+window.onresize = function() {
+    var lines = document.getElementById('body_home').children;
+    for (var i = 0; i < lines.length; i++) { 
+        if (lines[i].getAttribute('ltype') == 'privmsg' || lines[i].getAttribute('ltype') == 'action') {
+            var messageContainer = lines[i].children[0].children[1];
+            var calcWidth = (lines[i].offsetWidth - lines[i].children[0].children[0].offsetWidth - 210);
+            messageContainer.style.width = calcWidth.toString() + "px";
+        }
+    }
+    
+};
+
 Textual.newMessagePostedToView = function (line) {
     var message = document.getElementById('line-' + line);
     if (message.getAttribute('ltype') == 'privmsg' || message.getAttribute('ltype') == 'action') {
