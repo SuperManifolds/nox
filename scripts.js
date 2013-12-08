@@ -18,10 +18,19 @@ Textual.viewFinishedReload = function() {
 Textual.newMessagePostedToView = function (line) {
     var message = document.getElementById('line-' + line);
     if (message.getAttribute('ltype') == 'privmsg' || message.getAttribute('ltype') == 'action') {
-        var selectNick = message.children[0].children[1].children[0];
+        //Correct text wrapping programatically
+        var messageContainer = message.children[0].children[1];
+        //Subtract nick indentation area and timestamp size from the line width
+        var calcWidth = (message.offsetWidth - message.children[0].children[0].offsetWidth);
+        console.log(calcWidth + "px !important;");
+        console.log(messageContainer);
+        messageContainer.style.width = calcWidth + "px !important;";
+        
+        //Start alternative nick colouring procedure
+        var selectNick = messageContainer.children[0];
         selectNick.removeAttribute('colornumber');
         selectNick.style.color = get_color(selectNick.getAttribute('nick'));
-        var inlineNicks = message.children[0].children[1].querySelectorAll('.inline_nickname');
+        var inlineNicks = messageContainer.querySelectorAll('.inline_nickname');
         for (var i = 0, len = inlineNicks.length; i < len; i++) {
             inlineNicks[i].removeAttribute('colornumber');
             inlineNicks[i].style.color = get_color(inlineNicks[i].innerHTML);

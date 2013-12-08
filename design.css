@@ -346,7 +346,8 @@ body span.message {
 	vertical-align: middle;
 	min-height: 22px;
 	line-height: 22px;
-	width: calc(100% - 250px);
+    /* Placeholder size, will be overriden programatically */
+	width: 600px;
     padding-right: 40px;
 }
 
