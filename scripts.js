@@ -62,7 +62,7 @@ Textual.newMessagePostedToView = function (line) {
 };
 
 
-/* irccloud-colornicks by Alex Vidal. See LICENSE for copyright.  */
+/* Based on irccloud-colornicks by Alex Vidal. See LICENSE for copyright.  */
 
 function clean_nick(nick) {
     // attempts to clean up a nickname
@@ -87,27 +87,21 @@ function hash(nick) {
 
 function get_color(nick) {
     var nickhash = hash(nick);
-    // get a positive value for the hue
     var deg = nickhash % 360;
     var h = deg < 0 ? 360 + deg : deg;
-    // default L is 50
-    var l = 50;
-    // half of the hues are too light, for those we
-    // decrease lightness
+    var l = Math.abs(nickhash) % 110;
     if(h >= 30 && h <= 210) {
         l = 40;
     }
-    // keep saturation above 20
     var s = 20 + Math.abs(nickhash) % 80;
-    
-    // Prevent text from becing unreadably high on dark themes on certain parts of the hues.
     if (h >= 210 && s >= 80) {
-        s = s-20;
+        s = s-30;
     }
-    
-    // Avoid muddy colours.
-    if (h < 110 && s < 60) {
-        l = 60;
+    if ((h < 110 && s < 60) || l <= 30) {
+        l = l + 30;
+    }
+    if (l > 80) { 
+        l = l - 20;
     }
     return "hsl(" + h + "," + s + "%," + l + "%)";
 }
