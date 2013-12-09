@@ -247,6 +247,7 @@ body div.line[ltype=action] {
 
 body div[ltype="action"] .message {
 	color: #b359ff;
+	padding-left: 145px;
 }
 
 body div[ltype=action] .sender {
