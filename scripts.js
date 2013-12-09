@@ -22,24 +22,21 @@ window.onresize = function() {
         resizeTimeout = setTimeout(function() {
             var lines = document.getElementById('body_home').children;
             for (var i = 0; i < lines.length; i++) { 
-                if (lines[i].getAttribute('ltype') == 'privmsg' || lines[i].getAttribute('ltype') == 'action') {
-                    var messageContainer = lines[i].children[0].children[1];
-                    var calcWidth = (lines[i].offsetWidth - lines[i].children[0].children[0].offsetWidth - 210);
-                    messageContainer.style.width = calcWidth.toString() + "px";
-                }
+                var messageContainer = lines[i].children[0].children[1];
+                var calcWidth = (lines[i].offsetWidth - lines[i].children[0].children[0].offsetWidth - 210);
+                messageContainer.style.width = calcWidth.toString() + "px";
             }
         }, 250); 
     };
 
 Textual.newMessagePostedToView = function (line) {
     var message = document.getElementById('line-' + line);
+    //Correct text wrapping programatically
+    var messageContainer = message.children[0].children[1];
+    //Subtract nick indentation area and timestamp size (and 40px in padding) from the line width 
+    var calcWidth = (message.offsetWidth - message.children[0].children[0].offsetWidth - 210);
+    messageContainer.style.width = calcWidth.toString() + "px";
     if (message.getAttribute('ltype') == 'privmsg' || message.getAttribute('ltype') == 'action') {
-        //Correct text wrapping programatically
-        var messageContainer = message.children[0].children[1];
-        //Subtract nick indentation area and timestamp size (and 40px in padding) from the line width 
-        var calcWidth = (message.offsetWidth - message.children[0].children[0].offsetWidth - 210);
-        messageContainer.style.width = calcWidth.toString() + "px";
-        
         //Start alternative nick colouring procedure
         var selectNick = messageContainer.children[0];
         selectNick.removeAttribute('colornumber');
@@ -47,10 +44,11 @@ Textual.newMessagePostedToView = function (line) {
         var inlineNicks = messageContainer.querySelectorAll('.inline_nickname');
         for (var i = 0, len = inlineNicks.length; i < len; i++) {
             inlineNicks[i].removeAttribute('colornumber');
-            inlineNicks[i].style.color = get_color(inlineNicks[i].innerHTML);
+            inlineNicks[i].style.color = get_color(inlineNicks[i].getAttribute('nick'));
         }
     }
 };
+
 
 /* irccloud-colornicks by Alex Vidal. See LICENSE for copyright.  */
 
