@@ -242,7 +242,7 @@ body div[ltype=privmsg] .sender {
 
 body div.line[ltype=action] {
 	background-color: #181818;
-
+	min-height:22px;
 }
 
 body div[ltype="action"] .message {
