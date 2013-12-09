@@ -44,7 +44,11 @@ Textual.newMessagePostedToView = function (line) {
         var inlineNicks = messageContainer.querySelectorAll('.inline_nickname');
         for (var i = 0, len = inlineNicks.length; i < len; i++) {
             inlineNicks[i].removeAttribute('colornumber');
-            inlineNicks[i].style.color = get_color(inlineNicks[i].getAttribute('nick'));
+            var nick = inlineNicks[i].innerHTML;
+            if (inlineNicks[i].getAttribute('mode').length > 0) {
+                nick = nick.replace(inlineNicks[i].getAttribute('mode'), '');
+            }
+            inlineNicks[i].style.color = get_color(nick);
         }
     }
 };
