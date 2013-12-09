@@ -47,6 +47,7 @@ Textual.newMessagePostedToView = function (line) {
         selectNick.style.color = nickcolor;
         var inlineNicks = messageContainer.querySelectorAll('.inline_nickname');
         if (message.getAttribute('ltype') == 'action' && overrideActions) {
+            selectNick.children[0].style.color = nickcolor;
             messageContainer.style.color = nickcolor;
         }
         for (var i = 0, len = inlineNicks.length; i < len; i++) {

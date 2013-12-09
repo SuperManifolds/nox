@@ -1,0 +1,38 @@
+<div 	ltype="{{lineType}}" 
+		command="{{rawCommand}}"
+		highlight="{{highlightAttributeRepresentation}}" 
+		class="line {{lineClassAttributeRepresentation}}" 
+		id="line-{{lineNumber}}"
+		time="{{lineRenderTime}}">
+		
+{{#isRemoteMessage}}
+	<p>
+{{^isRemoteMessage}}
+	<p ltype="{{nicknameType}}" type="{{nicknameType}}">
+{{/isRemoteMessage}}
+
+		<span class="time">{{formattedTimestamp}} </span>
+		
+{{#isEncrypted}}
+	{{{encryptedMessageLockTemplate}}}
+{{/isEncrypted}}
+
+		<span class="message" ltype="{{lineType}}" type="{{lineType}}">
+			<span class="sender"
+				ondblclick="Textual.nicknameDoubleClicked()" 
+				oncontextmenu="Textual.openStandardNicknameContextualMenu()" 
+				ltype="{{nicknameType}}" type="{{nicknameType}}"
+				nick="{{nickname}}" 
+				{{#nicknameColorHashingEnabled}} 
+					colornumber="{{nicknameColorNumber}}"
+				{{/nicknameColorHashingEnabled}}><span class="senderDot">&#8901;</span>{{formattedNickname}}</span>
+					{{{formattedMessage}}}
+					
+					{{#inlineMediaAvailable}}
+						{{#inlineMediaArray}}
+							<a href="{{{anchorLink}}}" onclick="return Textual.toggleInlineImage('{{anchorInlineImageUniqueID}}')"><img src="{{{imageURL}}}" class="inlineimage" id="inlineImage-{{anchorInlineImageUniqueID}}" style="display: none; max-width: {{preferredMaximumWidth}}px;" title="Hide image by shift clicking." /></a>
+						{{/inlineMediaArray}}
+					{{/inlineMediaAvailable}}
+		</span>
+	</p>
+</div>

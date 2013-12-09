@@ -278,8 +278,7 @@ body[dir=ltr] div[ltype=action] .sender:after {
   	/* margin-right: 0.4em; */
 }
 
-body[dir=ltr] div[ltype=action] .sender:before {
-	content: "\2022";
+.senderDot {
 	margin-right: 0.4em;
 	color: #b359ff;
 }
