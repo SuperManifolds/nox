@@ -3,6 +3,9 @@
 
 /* Defined in: "Textual.app -> Contents -> Resources -> JavaScript -> API -> core.js" */
 
+//Optional: Set to true to make /me messages appear in the same color as the username.
+var overrideActions = false;
+
 Textual.viewFinishedLoading = function() {
     Textual.fadeInLoadingScreen(1.00, 0.95);
     
@@ -40,8 +43,12 @@ Textual.newMessagePostedToView = function (line) {
         //Start alternative nick colouring procedure
         var selectNick = messageContainer.children[0];
         selectNick.removeAttribute('colornumber');
-        selectNick.style.color = get_color(selectNick.getAttribute('nick'));
+        var nickcolor = get_color(selectNick.getAttribute('nick'));
+        selectNick.style.color = nickcolor;
         var inlineNicks = messageContainer.querySelectorAll('.inline_nickname');
+        if (message.getAttribute('ltype') == 'action' && overrideActions) {
+            messageContainer.style.color = nickcolor;
+        }
         for (var i = 0, len = inlineNicks.length; i < len; i++) {
             inlineNicks[i].removeAttribute('colornumber');
             var nick = inlineNicks[i].innerHTML;
