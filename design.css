@@ -298,9 +298,15 @@ body div.line[ltype=rawhtml] {
   	z-index: 190;
 	background: #393939;
   	position: relative;
- 	padding: 2px 0 2px 5px;
+ 	padding: 2px 0 2px 0;
 	border-top: 1px solid #868686;
 	border-bottom: 1px solid #868686;
+}
+
+body div.line[ltype=invite] .message,
+body div.line[ltype=debug] .message,
+body div.line[ltype=rawhtml] .message {
+    padding-left: 145px !important;
 }
 
 /* Message of the Day (MOTD) */
