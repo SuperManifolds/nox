@@ -1,8 +1,7 @@
-nox
+Nox
 ===
 
-__IMPORTANT:__ This style will only work with Textual 4.0 which is not yet released to the App Store.  
-This is in order to circumvent a flaw in the rendering engine used by Textual. Read [here](http://www.codeux.com/textual/wiki/Style-Developers:-Migrating-to-4.0.0.wiki) for more information.
+__This style is compatible Textual 4.0 and above__
 
 Nox (Style for the Textual IRC Client)  
 Based on [Whisper Dark, by Shamil Nunhuck](https://github.com/shamil-nunhuck/textual-whisper-dark)
