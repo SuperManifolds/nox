@@ -4,7 +4,7 @@
 /* Defined in: "Textual.app -> Contents -> Resources -> JavaScript -> API -> core.js" */
 
 //Optional: Set to true to make /me messages appear in the same color as the username.
-var overrideActions = false;
+var overrideActions = true;
 
 Textual.viewFinishedLoading = function() {
     Textual.fadeInLoadingScreen(1.00, 0.95);
