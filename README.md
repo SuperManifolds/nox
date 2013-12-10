@@ -13,4 +13,4 @@ Instructions to install:
 3.  Open Preferences in Textual and click the __Styles__ button.  
 4.  Select __"Nox"__ in the style list.  
   
-![Image of the style](http://i.imgur.com/nvUfXCe.png)
+![Image of the style](http://i.imgur.com/p6j8dxM.png)
