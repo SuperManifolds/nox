@@ -296,11 +296,12 @@ body div.line[ltype=debug],
 body div.line[ltype=rawhtml] {
 	color: #eee;
   	z-index: 190;
-	background: #393939;
+	background: #2f2f2f;
   	position: relative;
  	padding: 2px 0 2px 0;
-	border-top: 1px solid #868686;
-	border-bottom: 1px solid #868686;
+	border-top: 1px solid #393939;
+	border-bottom: 1px solid #393939;
+    font-size: 10px;
 }
 
 body div.line[ltype=invite] .message,
@@ -340,7 +341,7 @@ body div.line[command="376"] .message
 body div.line[command="720"] .message,
 body div.line[command="721"] .message,
 body div.line[command="722"] .message {
-	font-family: "Menlo" !important;
+	font-family: "Monaco" !important;
 }
 
 /* GENERAL EVENT */
