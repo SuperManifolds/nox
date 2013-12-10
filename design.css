@@ -178,7 +178,7 @@ body div.line[ltype=wallops] {
   	z-index: 191;
   	position: relative;
  	padding: 2px 5px 2px 5px;
-	background-color: #30486c;
+	background-color: #2f3e53;
 	border-bottom: none;
 	border-top: none;
 	border-left: none;
@@ -198,7 +198,7 @@ body div.line[ltype=privmsg][highlight=false] {
 
 body div.line[ltype=action][highlight=true],
 body div.line[ltype=privmsg][highlight=true] {
-	background-color: #38694c;
+	background-color: #3b5847;
 	border-bottom: none;
 	border-top: none;
 	border-left: none;
