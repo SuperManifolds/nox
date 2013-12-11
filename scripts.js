@@ -29,7 +29,7 @@ window.onresize = function() {
                 var calcWidth = (lines[i].offsetWidth - lines[i].children[0].children[0].offsetWidth - 210);
                 messageContainer.style.width = calcWidth.toString() + "px";
             }
-        }, 250); 
+        }, 1000); 
     };
 
 Textual.newMessagePostedToView = function (line) {

@@ -341,7 +341,7 @@ body div.line[command="376"] .message
 body div.line[command="720"] .message,
 body div.line[command="721"] .message,
 body div.line[command="722"] .message {
-	font-family: "Monaco" !important;
+	font-family: "Menlo" !important;
 }
 
 /* GENERAL EVENT */

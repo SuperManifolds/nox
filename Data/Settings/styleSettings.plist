@@ -13,8 +13,6 @@
 		<key>Font Size</key>
 		<integer>0</integer>
 	</dict>
-	<key>Indentation Offset</key>
-	<integer>6</integer>
 	<key>Underlying Window Color</key>
 	<string>#232323</string>
 	<key>Force Invert Sidebars</key>
