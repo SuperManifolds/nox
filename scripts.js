@@ -18,28 +18,10 @@ Textual.viewFinishedReload = function() {
     Textual.viewFinishedLoading();
 };
 
-//Update text wrapping on window resize
-var resizeTimeout;
-window.onresize = function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
-            var lines = document.getElementById('body_home').children;
-            for (var i = 0; i < lines.length; i++) { 
-                var messageContainer = lines[i].children[0].children[1];
-                var calcWidth = (lines[i].offsetWidth - lines[i].children[0].children[0].offsetWidth - 210);
-                messageContainer.style.width = calcWidth.toString() + "px";
-            }
-        }, 1000); 
-    };
-
 Textual.newMessagePostedToView = function (line) {
     var message = document.getElementById('line-' + line);
-    //Correct text wrapping programatically
-    var messageContainer = message.children[0].children[1];
-    //Subtract nick indentation area and timestamp size (and 40px in padding) from the line width 
-    var calcWidth = (message.offsetWidth - message.children[0].children[0].offsetWidth - 210);
-    messageContainer.style.width = calcWidth.toString() + "px";
-    if (message.getAttribute('ltype') == 'privmsg' || message.getAttribute('ltype') == 'action') {
+	var messageContainer = message.children[0].children[1];
+	if (message.getAttribute('ltype') == 'privmsg' || message.getAttribute('ltype') == 'action') {
         //Start alternative nick colouring procedure
         var selectNick = messageContainer.children[0];
         selectNick.removeAttribute('colornumber');
