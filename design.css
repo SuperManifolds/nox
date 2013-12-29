@@ -32,7 +32,7 @@ body {
 }
 
 #body_home {
-	max-height: 96.5%;
+	max-height: 100%;
 }
 
 body .line {
@@ -85,15 +85,17 @@ body[dir=ltr] .time {
 
 /* Encryption Lock */
 .encryptionLock {
-    float-right: 40px;
 }
 
 .encryptionLock img {
+    z-index: 100;
     position:absolute;
     top:0;
+    left: 5px;
     bottom:0;
     margin:auto;
-	height: 11px;
+	height: 12px;
+    width: auto;
 }
 
 /* Links */
@@ -135,7 +137,6 @@ a:hover {
 	border-color: #64a5ff;
 	text-shadow: 1px 1px rgba(10, 10, 10, 0.7);
 }
-
 
 /* Images */
 
@@ -453,10 +454,8 @@ body .inline_nickname {
 
 body .sender[ltype=myself] { 
 	color: #9A60FF; 
-	margin-left:5px;
 }
 
 body .sender[ltype=normal] { 
-	margin-left:5px;
 }
 
