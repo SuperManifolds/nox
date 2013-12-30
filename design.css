@@ -226,11 +226,10 @@ body div[ltype=privmsg] p[ltype=myself] .message {
 }
 
 body div[ltype=privmsg] .sender {
-
 	font-weight: 700;
 	width:134px;
 	background-color: #181818;
-	min-height:22px;
+	min-height:23px;
 	border-right: 1px solid rgb(64, 64, 64);
 	padding-right:5px;
 	text-align:right;
@@ -241,7 +240,6 @@ body div[ltype=privmsg] .sender {
 	bottom: 0;
 	left: 0;
 	text-overflow: ellipsis;
-	
 }
 
 /* ACTION */
