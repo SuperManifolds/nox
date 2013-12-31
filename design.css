@@ -212,8 +212,7 @@ body div.line[ltype=action][highlight=true] .message {
 }
 
 body div[ltype="privmsg"] .message {
-    word-wrap: break-word;
-    word-break: normal;
+    word-break: break-word;
     color: #fff;
 }
 
