@@ -5,7 +5,7 @@
 	padding: 0;
 	font-size: 100%;
 	word-wrap: break-word;
-}	
+}	-105px
 
 body {
 	color: #fff;
@@ -13,7 +13,7 @@ body {
  	z-index: 100;
 	font-size: 12px;
 	overflow: hidden;
-	overflow-y: visible;
+	overflow-y: visible;oh 
 	background-color: #232323;
 	font-family: "Roboto";
     font-weight: 200;
@@ -186,9 +186,30 @@ body div.line[ltype=wallops] {
 	border-left: none;
 }
 
+body div.line[ltype=action][highlight=true] .message {
+	color: #fff;
+}
+
+body div[ltype="privmsg"] .message {
+    word-break: break-word;
+    color: #fff;
+}
+ 
+body div[ltype="privmsg"][encrypted="1"] {
+     background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(166,166,166,.03) 20px, rgba(166,166,166,.03) 40px) !important;
+}
+ 
+body div[ltype=privmsg] p[ltype=myself] .message {
+ 	color: #fff;
+}
+ 
 body div[ltype=notice] .sender {
 	color: #f00;
 	font-weight: 700;
+}
+
+body div[ltype=notice] .message {
+ 	color: #fff;
 }
 
 /* PRIVMSG */
@@ -199,20 +220,13 @@ body div.line[ltype=privmsg][highlight=false] {
     min-height: 23px;
 }
 
-body div.line[ltype=action][highlight=true],
-body div.line[ltype=privmsg][highlight=true] {
-	background-color: #3b5847;
-	border-bottom: none;
-	border-top: none;
-	border-left: none;
-}
-
 body div[ltype=privmsg] .sender {
 	font-weight: 700;
 	width:134px;
 	min-height:23px;
 	border-right: 1px solid rgb(64, 64, 64);
 	padding-right:5px;
+    background-color: #181818;	
 	text-align:right;
 	display:inline-block;
 	overflow: auto;
@@ -232,6 +246,8 @@ body div[ltype=action] .sender {
 	left: 0;
 	font-weight: 700;
 	width:134px;
+	border-right: 1px solid rgb(64, 64, 64);	
+    background-color: #181818;	
 	height:22px;
 	padding-right:5px;
 	text-align:right;
@@ -411,20 +427,25 @@ body .sender[ltype=myself] {
 	cursor: pointer;
 }
 
-body div.line[ltype*=privmsg]:not(.selectedUser),
-body div.line[ltype*=action]:not(.selectedUser) {
+body div.line[ltype=privmsg]:not(.selectedUser),
+body div.line[ltype=action]:not(.selectedUser) {
     transition-property: border-top, border-bottom, background-color;
 	transition-duration: 0.5s, 0.5s, 0.5s;
 }
 
-body div.line[ltype*=privmsg] .time:not(.selectedUser),
-body div.line[ltype*=action] .time:not(.selectedUser) {
+body div.line[ltype=privmsg] .time:not(.selectedUser),
+body div.line[ltype=action] .time:not(.selectedUser) {
     transition: color 0.5s;
 }
 
 body div.line.selectedUser[highlight=false] .time {
     transition: color 0.5s ease-in;
 	color: #aaa;
+}
+
+
+body div.line.selectedUser[highlight=false] .sender {
+  	background-color: rgba(3, 134, 212, 0.25) !important;
 }
 
 body div.line.selectedUser[highlight=false] {
@@ -437,19 +458,19 @@ body div.line.selectedUser[highlight=false] {
   	background-color: rgba(3, 134, 212, 0.25) !important;
 }
 
-body div.line[ltype*=privmsg][highlight=false],
-body div.line[ltype*=action][highlight=false] {
+body div.line[ltype=privmsg][highlight=false],
+body div.line[ltype=action][highlight=false] {
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid transparent;
 	background-color: none;
 }
 
-body div.line[ltype*=privmsg][highlight=true],
-body div.line[ltype*=action][highlight=true] {
+body div.line[ltype=privmsg][highlight=true],
+body div.line[ltype=action][highlight=true] {
   	z-index: 191;
   	position: relative;
 	font-weight: normal;
-	border-top: 1px solid #988C00;
-	border-bottom: 1px solid #988C00;
-  	background-color: #362C00 !important;
+	border-top: 1px solid #3b5847;
+	border-bottom: 1px solid #3b5847;
+	background-color: #3b5847;
 }
