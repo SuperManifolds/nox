@@ -5,6 +5,7 @@
 
 //Optional: Set to true to make /me messages appear in the same color as the username.
 var overrideActions = true;
+var mappedSelectedUsers = new Array();
 
 Textual.viewFinishedLoading = function() {
     Textual.fadeInLoadingScreen(1.00, 0.95);
@@ -41,7 +42,74 @@ Textual.newMessagePostedToView = function (line) {
             inlineNicks[i].style.color = get_color(nick);
         }
     }
+    var element = document.getElementById("line-" + line);
+
+    updateNicknameAssociatedWithNewMessage(element);    
 };
+
+Textual.nicknameSingleClicked = function()
+{
+	userNicknameSingleClickEvent(event.target);
+}
+
+function updateNicknameAssociatedWithNewMessage(e)
+{
+	/* We only want to target plain text messages. */
+	var elementType = e.getAttribute("ltype");
+	if (elementType == "privmsg" || elementType == "action") {
+		/* Get the nickname information. */
+		var senderSelector = e.querySelector(".sender");
+		if (senderSelector) {
+			/* Is this a mapped user? */
+			var nickname = senderSelector.getAttribute("nick");
+
+			/* If mapped, toggle status on for new message. */
+			if (mappedSelectedUsers.indexOf(nickname) > -1) {
+				toggleSelectionStatusForNicknameInsideElement(senderSelector);
+			}
+		}
+	}
+}
+
+function toggleSelectionStatusForNicknameInsideElement(e)
+{
+	/* e is nested as the .sender so we have to go three parents
+	 up in order to reach the parent div that owns it. */
+	var parentSelector = e.parentNode.parentNode.parentNode;
+
+	parentSelector.classList.toggle("selectedUser");
+}
+
+function userNicknameSingleClickEvent(e)
+{
+	/* This is called when the .sender is clicked. */
+	var nickname = e.getAttribute("nick");
+    console.log(nickname);
+	/* Toggle mapped status for nickname. */
+	var mappedIndex = mappedSelectedUsers.indexOf(nickname);
+
+	if (mappedIndex == -1) {
+		mappedSelectedUsers.push(nickname);
+	} else {
+		mappedSelectedUsers.splice(mappedIndex, 1);
+	}
+
+	/* Gather basic information. */
+    var documentBody = document.getElementById("body_home");
+
+    var allLines = documentBody.querySelectorAll('div[ltype="privmsg"], div[ltype="action"]');
+
+	/* Update all elements of the DOM matching conditions. */
+    for (var i = 0, len = allLines.length; i < len; i++) {
+        var sender = allLines[i].querySelectorAll(".sender");
+
+        if (sender.length > 0) {
+            if (sender[0].getAttribute("nick") === nickname) {
+				toggleSelectionStatusForNicknameInsideElement(sender[0]);
+            }
+        }
+    }
+}
 
 
 /* Based on irccloud-colornicks by Alex Vidal. See LICENSE for copyright.  */
