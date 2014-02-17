@@ -165,6 +165,25 @@ div[id=mark] {
 	-webkit-transition: 0.2s linear;
 }
 
+body[dir=ltr] div[ltype=action] .sender:before {
+	margin-right: 0.4em;
+}
+
+-body[dir=ltr] div[ltype=action] .sender:after {
+	content: "";
+  	/* margin-right: 0.4em; */
+}
+
+.senderDot {
+	margin-right: 0.4em;
+	color: #b359ff;
+}
+
+body[dir=rtl] div[ltype=action] .sender:after {
+	content: "";
+  	/* margin-left: 0.4em; */
+}
+ 
 /* Historic / Log readback */
 
 .historic {
@@ -475,5 +494,11 @@ body div.line[ltype=action][highlight=true] {
 	font-weight: normal;
 	border-top: 1px solid #3b5847;
 	border-bottom: 1px solid #3b5847;
+	background-color: #3b5847;
+}
+
+body div.line[highlight=true] .sender, 
+body div.line.selectedUser[highlight=true] .sender {
+    border: none;
 	background-color: #3b5847;
 }
