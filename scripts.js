@@ -26,7 +26,7 @@ Textual.newMessagePostedToView = function (line) {
         //Start alternative nick colouring procedure
         var selectNick = messageContainer.children[0];
         selectNick.removeAttribute('colornumber');
-        var nickcolor = get_color(selectNick.getAttribute('nick'));
+        var nickcolor = get_color(selectNick.getAttribute('nickname'));
         selectNick.style.color = nickcolor;
         var inlineNicks = messageContainer.querySelectorAll('.inline_nickname');
         if (message.getAttribute('ltype') == 'action' && overrideActions) {
@@ -61,7 +61,7 @@ function updateNicknameAssociatedWithNewMessage(e)
 		var senderSelector = e.querySelector(".sender");
 		if (senderSelector) {
 			/* Is this a mapped user? */
-			var nickname = senderSelector.getAttribute("nick");
+			var nickname = senderSelector.getAttribute("nickname");
 
 			/* If mapped, toggle status on for new message. */
 			if (mappedSelectedUsers.indexOf(nickname) > -1) {
@@ -83,7 +83,7 @@ function toggleSelectionStatusForNicknameInsideElement(e)
 function userNicknameSingleClickEvent(e)
 {
 	/* This is called when the .sender is clicked. */
-	var nickname = e.getAttribute("nick");
+	var nickname = e.getAttribute("nickname");
     console.log(nickname);
 	/* Toggle mapped status for nickname. */
 	var mappedIndex = mappedSelectedUsers.indexOf(nickname);
@@ -104,7 +104,7 @@ function userNicknameSingleClickEvent(e)
         var sender = allLines[i].querySelectorAll(".sender");
 
         if (sender.length > 0) {
-            if (sender[0].getAttribute("nick") === nickname) {
+            if (sender[0].getAttribute("nickname") === nickname) {
 				toggleSelectionStatusForNicknameInsideElement(sender[0]);
             }
         }
