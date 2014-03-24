@@ -271,7 +271,6 @@ body div.line[ltype=rawhtml] {
  	padding: 2px 0 2px 0;
 	border-top: 1px solid #393939;
 	border-bottom: 1px solid #393939;
-	font-size: 10px;
 }
 
 body div.line[ltype=invite] .message,
