@@ -469,7 +469,7 @@ body div.line.selectedUser[highlight=false] {
 	transition-duration: 0.5s, 0.5s, 0.5s;
   	z-index: 190;
   	position: relative;
-  	background-color: rgba(3, 134, 212, 0.25) !important;
+	background-color: #2f3e53;
 }
 
 body div.line[ltype=privmsg][highlight=true],
