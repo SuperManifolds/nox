@@ -450,7 +450,7 @@ body .sender[ltype=myself] {
 
 body div.line[ltype=privmsg]:not(.selectedUser),
 body div.line[ltype=action]:not(.selectedUser) {
-    transition-property: border-top, border-bottom, background-color;
+    transition-property: background-color;
 	transition-duration: 0.5s, 0.5s, 0.5s;
 }
 
@@ -464,26 +464,12 @@ body div.line.selectedUser[highlight=false] .time {
 	color: #aaa;
 }
 
-
-body div.line.selectedUser[highlight=false] .sender {
-  	background-color: rgba(3, 134, 212, 0.25) !important;
-}
-
 body div.line.selectedUser[highlight=false] {
-    transition-property: border-top, border-bottom, background-color;
+    transition-property: background-color;
 	transition-duration: 0.5s, 0.5s, 0.5s;
   	z-index: 190;
   	position: relative;
-	border-top: 1px solid #02577C !important;
-	border-bottom: 1px solid #02577C !important;
   	background-color: rgba(3, 134, 212, 0.25) !important;
-}
-
-body div.line[ltype=privmsg][highlight=false],
-body div.line[ltype=action][highlight=false] {
-	border-top: 1px solid transparent;
-	border-bottom: 1px solid transparent;
-	background-color: none;
 }
 
 body div.line[ltype=privmsg][highlight=true],
@@ -491,13 +477,5 @@ body div.line[ltype=action][highlight=true] {
   	z-index: 191;
   	position: relative;
 	font-weight: normal;
-	border-top: 1px solid #3b5847;
-	border-bottom: 1px solid #3b5847;
-	background-color: #3b5847;
-}
-
-body div.line[highlight=true] .sender, 
-body div.line.selectedUser[highlight=true] .sender {
-    border: none;
 	background-color: #3b5847;
 }
