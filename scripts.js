@@ -47,9 +47,9 @@ Textual.newMessagePostedToView = function (line) {
     updateNicknameAssociatedWithNewMessage(element);    
 };
 
-Textual.nicknameSingleClicked = function()
+Textual.nicknameSingleClicked = function(e)
 {
-	userNicknameSingleClickEvent(event.target);
+    userNicknameSingleClickEvent(e);
 }
 
 function updateNicknameAssociatedWithNewMessage(e)
@@ -84,7 +84,6 @@ function userNicknameSingleClickEvent(e)
 {
 	/* This is called when the .sender is clicked. */
 	var nickname = e.getAttribute("nickname");
-    console.log(nickname);
 	/* Toggle mapped status for nickname. */
 	var mappedIndex = mappedSelectedUsers.indexOf(nickname);
 
