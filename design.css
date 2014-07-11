@@ -142,16 +142,17 @@ a:hover {
 /* Images */
 
 body a img {
-	border-left: 143px solid #000;
-	margin-left:-148px;
-	padding-left: 5px;
-	padding-bottom: 5px;
+/*	border-left: 143px solid #000; */
+/*	margin-left:-148px; */
+/*	padding-left: 5px; */
+/*	padding-bottom: 5px; */
+	border: 0;
 }
 
 body img {
 	display: block;
 	max-width: 95%;
-	/* margin: 15px 15px 12px 15px; */
+    margin: 15px 15px 12px 15px;
 }
 
 /* Remember Line */
