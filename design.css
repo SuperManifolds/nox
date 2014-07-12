@@ -5,7 +5,7 @@
 	padding: 0;
 	font-size: 100%;
 	word-wrap: break-word;
-}	-105px
+}
 
 body {
 	color: #fff;
@@ -14,7 +14,7 @@ body {
 	font-size: 12px;
 	overflow: hidden;
 	overflow-y: visible;oh
-	background-color: #232323;
+	background-color: #1d1d1d;
 	font-family: "Heletica Neue";
     font-weight: 200;
 }
@@ -243,7 +243,7 @@ body div[ltype=privmsg] .sender {
 	min-height:23px;
 	border-right: 1px solid rgb(64, 64, 64);
 	padding-right:5px;
-    background-color: #181818;
+    background-color: #1d1d1d;
 	text-align:right;
 	display:inline-block;
 	overflow: auto;
@@ -266,7 +266,7 @@ body div[ltype=action] .sender {
 	border-right: 1px solid rgb(64, 64, 64);
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid transparent;
-    background-color: #181818;
+    background-color: #1d1d1d;
 	height:22px;
 	padding-right:5px;
 	text-align:right;
@@ -359,7 +359,7 @@ body div.line[ltype=website] {
 	min-height: 19px;
 	padding-left: 125px;
 	color: #88a9e8;
-    background: rgb(24,24,24);
+    background: #1d1d1d;
 }
 
 body div.line[ltype=nick] {
@@ -367,7 +367,7 @@ body div.line[ltype=nick] {
 	min-height: 19px;
 	padding-left: 125px;
 	color: #529567;
-    background: rgb(24,24,24);
+    background: #1d1d1d;
 }
 
 body div.line[ltype=kill],
@@ -376,7 +376,7 @@ body div.line[ltype=kick] {
 	min-height: 19px;
 	padding-left: 125px;
 	color: #ec5151;
-    background: rgb(24,24,24);
+    background: #1d1d1d;
 }
 
 body[dir=ltr] div[ltype=join] .message:before {
