@@ -13,7 +13,7 @@ body {
  	z-index: 100;
 	font-size: 12px;
 	overflow: hidden;
-	overflow-y: visible;oh
+	overflow-y: visible;
 	background-color: #1d1d1d;
 	font-family: "Heletica Neue";
     font-weight: 200;
@@ -185,7 +185,7 @@ body[dir=rtl] div[ltype=action] .sender:after {
 
 .historic {
 	font-weight: 200;
-	opacity: 0.5;
+	opacity: 0.75;
 	-webkit-filter: grayscale(90%);
 }
 
