@@ -35,10 +35,6 @@ body {
 	max-height: 100%;
 }
 
-body .line {
- 	border-bottom: 1px solid #181818;
-}
-
 body[dir=rtl] .sender {
 	display: inline-block;
 }
@@ -129,7 +125,7 @@ a:hover {
 	box-shadow: 0 1px 5px #777;
 	border-bottom: 1px solid #404040;
 	text-shadow: 1px 1px rgba(10, 10, 10, 0.7);
-	background: rgba(50,50,50,0.9);
+	background: rgba(60, 60, 60, 0.91);
 }
 
 #topic_bar a,
@@ -189,7 +185,8 @@ body[dir=rtl] div[ltype=action] .sender:after {
 
 .historic {
 	font-weight: 200;
-	-webkit-filter: grayscale(75%);
+	opacity: 0.5;
+	-webkit-filter: grayscale(90%);
 }
 
 /* NOTICE/CTCP/WALLOPS */
@@ -247,8 +244,6 @@ body div[ltype=privmsg] .sender {
 	border-right: 1px solid rgb(64, 64, 64);
 	padding-right:5px;
     background-color: #181818;
-	border-top: 1px solid transparent;
-	border-bottom: 1px solid transparent;
 	text-align:right;
 	display:inline-block;
 	overflow: auto;
