@@ -9,9 +9,9 @@
 	<key>Override Channel Font</key>
 	<dict>
 		<key>Font Name</key>
-		<string></string>
+		<string>Helvetica Neue</string>
 		<key>Font Size</key>
-		<integer>0</integer>
+		<integer>13</integer>
 	</dict>
 	<key>Underlying Window Color</key>
 	<string>#232323</string>

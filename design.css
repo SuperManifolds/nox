@@ -13,9 +13,9 @@ body {
  	z-index: 100;
 	font-size: 12px;
 	overflow: hidden;
-	overflow-y: visible;oh 
+	overflow-y: visible;oh
 	background-color: #232323;
-	font-family: "Roboto";
+	font-family: "Heletica Neue";
     font-weight: 200;
 }
 
@@ -51,7 +51,7 @@ body[dir=rtl] .sender {
 /* Loading Screen */
 
 #loading_screen {
-	position:absolute; 
+	position:absolute;
 	top: 50%;
 	left: 50%;
 	margin-left: -105px;
@@ -106,7 +106,7 @@ a {
     border-color: #ccc;
 	text-decoration: none;
 	border-bottom: dotted 1px;
-    
+
 }
 
 a:hover {
@@ -132,7 +132,7 @@ a:hover {
 	background: rgba(50,50,50,0.9);
 }
 
-#topic_bar a, 
+#topic_bar a,
 #topic_bar .channel {
 	color: #64a5ff;
 	border-color: #64a5ff;
@@ -184,7 +184,7 @@ body[dir=rtl] div[ltype=action] .sender:after {
 	content: "";
   	/* margin-left: 0.4em; */
 }
- 
+
 /* Historic / Log readback */
 
 .historic {
@@ -214,15 +214,15 @@ body div[ltype="privmsg"] .message {
     word-break: break-word;
     color: #fff;
 }
- 
+
 body div[ltype="privmsg"][encrypted="1"] {
      background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(166,166,166,.03) 20px, rgba(166,166,166,.03) 40px) !important;
 }
- 
+
 body div[ltype=privmsg] p[ltype=myself] .message {
  	color: #fff;
 }
- 
+
 body div[ltype=notice] .sender {
 	color: #f00;
 	font-weight: 700;
@@ -246,9 +246,9 @@ body div[ltype=privmsg] .sender {
 	min-height:23px;
 	border-right: 1px solid rgb(64, 64, 64);
 	padding-right:5px;
-    background-color: #181818;	
+    background-color: #181818;
 	border-top: 1px solid transparent;
-	border-bottom: 1px solid transparent;    
+	border-bottom: 1px solid transparent;
 	text-align:right;
 	display:inline-block;
 	overflow: auto;
@@ -271,7 +271,7 @@ body div[ltype=action] .sender {
 	border-right: 1px solid rgb(64, 64, 64);
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid transparent;
-    background-color: #181818;	
+    background-color: #181818;
 	height:22px;
 	padding-right:5px;
 	text-align:right;
@@ -301,7 +301,7 @@ body div.line[ltype=rawhtml] .message {
 
 /* Message of the Day (MOTD) */
 /* 720, 721, 722 are used by ShadowIRCd for Oper MOTD. */
-/* 372, 375, 376 are normal MOTD shared by several IRCds. */ 
+/* 372, 375, 376 are normal MOTD shared by several IRCds. */
 
 body div.line[command="372"],
 body div.line[command="721"] {
@@ -326,7 +326,7 @@ body div.line[command="722"] { /* End. */
 
 body div.line[command="372"] .message,
 body div.line[command="375"] .message,
-body div.line[command="376"] .message 
+body div.line[command="376"] .message
 body div.line[command="720"] .message,
 body div.line[command="721"] .message,
 body div.line[command="722"] .message {
@@ -439,8 +439,8 @@ body .inline_nickname {
 	font-weight: 700;
 }
 
-body .sender[ltype=myself] { 
-	color: #9A60FF; 
+body .sender[ltype=myself] {
+	color: #9A60FF;
 }
 
 /* SELECTED USER MESSAGES */
