@@ -9,7 +9,7 @@ var mappedSelectedUsers = new Array();
 
 Textual.viewFinishedLoading = function() {
     Textual.fadeInLoadingScreen(1.00, 0.95);
-    
+
     setTimeout(function() {
         Textual.scrollToBottomOfView();
     }, 500);
@@ -44,7 +44,7 @@ Textual.newMessagePostedToView = function (line) {
     }
     var element = document.getElementById("line-" + line);
 
-    updateNicknameAssociatedWithNewMessage(element);    
+    updateNicknameAssociatedWithNewMessage(element);
 };
 
 Textual.nicknameSingleClicked = function(e)
@@ -149,7 +149,7 @@ function get_color(nick) {
     if ((h < 110 && s < 60) || l <= 30) {
         l = l + 30;
     }
-    if (l > 80) { 
+    if (l > 80) {
         l = l - 20;
     }
     return "hsl(" + h + "," + s + "%," + l + "%)";

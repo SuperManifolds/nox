@@ -434,7 +434,7 @@ body .inline_nickname {
 	font-weight: 700;
 }
 
-body .sender[ltype=myself] {
+body .sender[mtype=myself] {
 	color: #9A60FF;
 }
 
