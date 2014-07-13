@@ -242,7 +242,7 @@ body div[ltype=privmsg] .sender {
 	width:134px;
 	min-height:23px;
 	border-right: 1px solid rgb(64, 64, 64);
-	padding-right:5px;
+	padding-right:7px;
     background-color: #1d1d1d;
 	text-align:right;
 	display:inline-block;
