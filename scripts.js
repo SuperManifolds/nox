@@ -76,55 +76,8 @@ var NickColorGenerator = (function () {
 
 var GeneralEventManager = (function () {
     function GeneralEventManager() {
-        this._generalEventList = ['join', 'part', 'mode', 'nick', 'quit'];
-        this._previousTimestamp = new Date().getTime();
     }
-    GeneralEventManager.prototype.newMessage = function (message) {
-        if (this._generalEventList.indexOf(message.getAttribute("ltype")) !== -1) {
-
-            var previousElement = message.previousSibling;
-            var secondsSinceLastEvent = parseFloat(message.getAttribute("time"), 10) - this._previousTimestamp;
-            /*if (secondsSinceLastEvent > 30 && !this._generalEventList.indexOf(previousElement.getAttribute("ltype"))) {
-                this.createNewExpandable(message, null);
-                return;
-            }*/
-
-            var i = 0;
-            while (previousElement && i < 4) {
-                if (previousElement.hasAttribute("ltype") && this._generalEventList.indexOf(previousElement.getAttribute("ltype")) !== -1) {
-                    this.createNewExpandable(message, previousElement);
-                    break;
-                } else if (previousElement.nodeName === "DETAILS") {
-                    this.appendToExpandable(message, previousElement);
-                    break;
-                }
-                previousElement = previousElement.previousSibling;
-                i++;
-            }
-        }
-    };
-
-    GeneralEventManager.prototype.createNewExpandable = function (newElement, previousElement) {
-        var newExpandable = document.createElement("DETAILS");
-        var parentNode = previousElement.parentNode;
-        var insertExpanderLocation = previousElement ? previousElement.previousSibling : newElement.previousSibling;
-        if (previousElement) {
-            newExpandable.appendChild(previousElement.cloneNode(true));
-            parentNode.removeChild(previousElement);
-        }
-        newExpandable.appendChild(newElement.cloneNode(true));
-        parentNode.removeChild(newElement);
-        parentNode.insertBefore(newExpandable, insertExpanderLocation);
-    };
-
-    GeneralEventManager.prototype.appendToExpandable = function (newElement, expandable) {
-        expandable.appendChild(newElement.cloneNode(true));
-        var parentNode = expandable.parentNode;
-        parentNode.removeChild(newElement);
-    };
-    return GeneralEventManager;
 })();
-
 
 
 Textual.viewFinishedLoading = function() {
@@ -144,7 +97,7 @@ Textual.newMessagePostedToView = function (line) {
 	if (message.getAttribute('ltype') == 'privmsg' || message.getAttribute('ltype') == 'action') {
         new NickColorGenerator(message);
     }
-    window.generalEventManager.newMessage(message);
+
     updateNicknameAssociatedWithNewMessage(message);
 };
 
@@ -212,5 +165,3 @@ function userNicknameSingleClickEvent(e)
         }
     }
 }
-
-window.generalEventManager = new GeneralEventManager();
