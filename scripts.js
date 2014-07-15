@@ -56,14 +56,14 @@ var NickColorGenerator = (function () {
         var h = deg < 0 ? 360 + deg : deg;
         var l = Math.abs(nickhash) % 110;
         if(h >= 30 && h <= 210) {
-            l = 40;
+            l = 50;
         }
-        var s = 20 + Math.abs(nickhash) % 80;
+        var s = 20 + Math.abs(nickhash) % 70;
         if (h >= 210 && s >= 80) {
             s = s-30;
         }
         if ((h < 110 && s < 60) || l <= 30) {
-            l = l + 30;
+            l = l + 40;
         }
         if (l > 80) {
             l = l - 20;
@@ -72,7 +72,6 @@ var NickColorGenerator = (function () {
     };
     return NickColorGenerator;
 })();
-
 
 var GeneralEventManager = (function () {
     function GeneralEventManager() {
