@@ -52,12 +52,13 @@ body[dir=rtl] .sender {
 /* Loading Screen */
 
 #loading_screen {
-	position:absolute;
-	top: 50%;
-	left: 50%;
-	margin-left: -105px;
+	position:fixed;
+	margin: auto;
+	top: 0; left: 0; right: 0; bottom: 0;
 	width: 210px;
-	height: 55px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
 	font-size: 18px;
 	background: #363636;
 	padding: 5px;
