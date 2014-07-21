@@ -365,6 +365,7 @@ body div.event span.time {
 
 body div.event span.message {
 	min-height: 19px;
+	text-indent: -20px;
 	line-height: 19px;
 	padding-left: 0;
 }
@@ -377,7 +378,7 @@ body div.line[ltype=topic],
 body div.line[ltype=website] {
     font-size: 85%;
 	min-height: 19px;
-	padding-left: 125px;
+	padding-left: 145px;
 	color: #a5b6ce;
     background: #1d1d1d;
 }
