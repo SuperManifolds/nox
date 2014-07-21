@@ -93,7 +93,6 @@ Textual.viewFinishedReload = function() {
 
 Textual.newMessagePostedToView = function (line) {
     var message = document.getElementById('line-' + line);
-    //message.style.position = "static";
 	if (message.getAttribute('ltype') == 'privmsg' || message.getAttribute('ltype') == 'action') {
         new NickColorGenerator(message);
     }

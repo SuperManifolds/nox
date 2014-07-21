@@ -19,11 +19,6 @@ body {
     font-weight: 200;
 }
 
-body div.line {
-	/*position: absolute;*/
-	-webkit-transition: all 5s ease;
-}
-
 #body_home {
 	left: 0;
 	right: 0;
