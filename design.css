@@ -322,6 +322,14 @@ body div.line[command="722"] { /* End. */
 	padding-bottom: 3px;
 }
 
+/* Private Message (+g) alerts */
+body div.line[command="-100"],
+body div.line[command="457"] {
+	background-color: #1b0616;
+	border-top: 1px solid #24091c;
+	border-bottom: 1px solid #24091c;
+}
+
 body div.line[command="372"] .message,
 body div.line[command="375"] .message,
 body div.line[command="376"] .message
