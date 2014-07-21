@@ -73,12 +73,6 @@ var NickColorGenerator = (function () {
     return NickColorGenerator;
 })();
 
-var GeneralEventManager = (function () {
-    function GeneralEventManager() {
-    }
-})();
-
-
 Textual.viewFinishedLoading = function() {
     Textual.fadeInLoadingScreen(1.00, 0.95);
 
@@ -100,15 +94,13 @@ Textual.newMessagePostedToView = function (line) {
     updateNicknameAssociatedWithNewMessage(message);
 };
 
-Textual.nicknameSingleClicked = function(e)
-{
+Textual.nicknameSingleClicked = function(e) {
     userNicknameSingleClickEvent(e);
 }
 
 
 
-function updateNicknameAssociatedWithNewMessage(e)
-{
+function updateNicknameAssociatedWithNewMessage(e) {
 	/* We only want to target plain text messages. */
 	var elementType = e.getAttribute("ltype");
 	if (elementType == "privmsg" || elementType == "action") {
@@ -126,8 +118,7 @@ function updateNicknameAssociatedWithNewMessage(e)
 	}
 }
 
-function toggleSelectionStatusForNicknameInsideElement(e)
-{
+function toggleSelectionStatusForNicknameInsideElement(e) {
 	/* e is nested as the .sender so we have to go three parents
 	 up in order to reach the parent div that owns it. */
 	var parentSelector = e.parentNode.parentNode.parentNode;
@@ -135,8 +126,7 @@ function toggleSelectionStatusForNicknameInsideElement(e)
 	parentSelector.classList.toggle("selectedUser");
 }
 
-function userNicknameSingleClickEvent(e)
-{
+function userNicknameSingleClickEvent(e) {
 	/* This is called when the .sender is clicked. */
 	var nickname = e.getAttribute("nickname");
 	/* Toggle mapped status for nickname. */
