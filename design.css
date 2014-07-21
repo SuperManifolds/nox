@@ -19,6 +19,11 @@ body {
     font-weight: 200;
 }
 
+body div.line {
+	/*position: absolute;*/
+	-webkit-transition: all 5s ease;
+}
+
 #body_home {
 	left: 0;
 	right: 0;
@@ -201,6 +206,9 @@ body div.line[ltype=wallops] {
 	border-bottom: none;
 	border-top: none;
 	border-left: none;
+}
+body div.line[ltype=action] .message {
+	padding-top: 1px;
 }
 
 body div.line[ltype=action][highlight=true] .message {
