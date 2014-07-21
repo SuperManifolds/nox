@@ -357,6 +357,7 @@ body div.line[ltype=join],
 body div.line[ltype=part],
 body div.line[ltype=quit],
 body div.line[ltype=mode],
+body div.line[ltype=nick],
 body div.line[ltype=topic],
 body div.line[ltype=website] {
     font-size: 85%;
@@ -366,12 +367,12 @@ body div.line[ltype=website] {
     background: #1d1d1d;
 }
 
+body div.line[ltype=topic] span.message {
+	text-indent: 0;
+}
+
 body div.line[ltype=nick] {
-    font-size: 85%;
-	min-height: 19px;
-	padding-left: 125px;
 	color: #529567;
-    background: #1d1d1d;
 }
 
 body div.line[ltype=kill],
