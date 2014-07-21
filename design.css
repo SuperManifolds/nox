@@ -345,6 +345,7 @@ body div.line[command="722"] .message {
 body span.message {
 	position: relative;
 	padding-left: 150px;
+	padding-right: 25px;
 	display: table-cell;
 	min-height: 22px;
 	line-height: 22px;
