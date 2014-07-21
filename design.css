@@ -282,6 +282,7 @@ body div[ltype=action] .sender {
 /* DEBUG/INVITE */
 body div.line[ltype=invite],
 body div.line[ltype=debug],
+body div.line[ltype=dccfiletransfer],
 body div.line[ltype=rawhtml] {
 	color: #eee;
   	z-index: 190;
@@ -294,6 +295,7 @@ body div.line[ltype=rawhtml] {
 
 body div.line[ltype=invite] .message,
 body div.line[ltype=debug] .message,
+body div.line[ltype=dccfiletransfer] .message,
 body div.line[ltype=rawhtml] .message {
     padding-left: 145px !important;
 }
@@ -323,8 +325,8 @@ body div.line[command="722"] { /* End. */
 }
 
 /* Private Message (+g) alerts */
-body div.line[command="-100"],
-body div.line[command="457"] {
+body div.line[ltype=debug][command="-100"],
+body div.line[ltype=debug][command="457"] {
 	background-color: #1b0616;
 	border-top: 1px solid #24091c;
 	border-bottom: 1px solid #24091c;
