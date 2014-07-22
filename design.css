@@ -141,6 +141,7 @@ body a img {
 	border: 0;
 }
 
+body video,
 body img {
 	display: block;
 	max-width: 95%;

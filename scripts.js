@@ -89,6 +89,19 @@ Textual.newMessagePostedToView = function (line) {
     var message = document.getElementById('line-' + line);
 	if (message.getAttribute('ltype') == 'privmsg' || message.getAttribute('ltype') == 'action') {
         new NickColorGenerator(message);
+        var links = message.getElementsByTagName("a");
+        var gfyregex = /http(s)?:\/\/[A-Za-z0-9]*.gfycat.com\/([A-Za-z0-9]*)/;
+        for (var i = 0, len = links.length; i < len; i++) {
+            var matches = gfyregex.exec(links[i].getAttribute("href"));
+            if (matches) {
+                var video = document.createElement("video");
+                video.setAttribute("loop", true);
+                video.setAttribute("autoplay", true);
+                video.setAttribute("src", "http://giant.gfycat.com/" + matches[2] + ".mp4");
+
+                message.querySelector(".innerMessage").appendChild(video);
+            }
+        }
     }
 
     updateNicknameAssociatedWithNewMessage(message);
