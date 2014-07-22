@@ -94,12 +94,21 @@ Textual.newMessagePostedToView = function (line) {
         for (var i = 0, len = links.length; i < len; i++) {
             var matches = gfyregex.exec(links[i].getAttribute("href"));
             if (matches) {
-                var video = document.createElement("video");
-                video.setAttribute("loop", true);
-                video.setAttribute("autoplay", true);
-                video.setAttribute("src", "http://giant.gfycat.com/" + matches[2] + ".mp4");
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) {
+                        var info = JSON.parse(xhr.responseText);
 
-                message.querySelector(".innerMessage").appendChild(video);
+                        var video = document.createElement("video");
+                        video.setAttribute("loop", true);
+                        video.setAttribute("autoplay", true);
+                        video.setAttribute("src", info.gfyItem.mp4Url);
+
+                        message.querySelector(".innerMessage").appendChild(video);
+                    }
+                }
+                xhr.open("GET", "http://gfycat.com/cajax/get/" + matches[2], true);
+                xhr.send();
             }
         }
     }
