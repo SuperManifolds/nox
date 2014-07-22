@@ -89,30 +89,7 @@ Textual.newMessagePostedToView = function (line) {
     var message = document.getElementById('line-' + line);
 	if (message.getAttribute('ltype') == 'privmsg' || message.getAttribute('ltype') == 'action') {
         new NickColorGenerator(message);
-        var links = message.getElementsByTagName("a");
-        var gfyregex = /http(s)?:\/\/[A-Za-z0-9]*.gfycat.com\/([A-Za-z0-9]*)/;
-        for (var i = 0, len = links.length; i < len; i++) {
-            var matches = gfyregex.exec(links[i].getAttribute("href"));
-            if (matches) {
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState == 4) {
-                        var info = JSON.parse(xhr.responseText);
-
-                        var video = document.createElement("video");
-                        video.setAttribute("loop", true);
-                        video.setAttribute("autoplay", true);
-                        video.setAttribute("src", info.gfyItem.mp4Url);
-
-                        message.querySelector(".innerMessage").appendChild(video);
-                    }
-                }
-                xhr.open("GET", "http://gfycat.com/cajax/get/" + matches[2], true);
-                xhr.send();
-            }
-        }
     }
-
     updateNicknameAssociatedWithNewMessage(message);
 };
 
