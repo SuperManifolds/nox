@@ -19,6 +19,10 @@ body {
     font-weight: 200;
 }
 
+ body .line {
+	clear: both;
+  }
+
 #body_home {
 	left: 0;
 	right: 0;
@@ -147,8 +151,15 @@ body img {
 }
 
 .inlineImageCell {
-	display: block;
 	position: relative;
+	display: table;
+	overflow: auto;
+	width: auto;
+	height: auto;
+}
+
+.inlineImageCell > a {
+	display: inline-block;
 }
 
 .inlineImageCell .image {
