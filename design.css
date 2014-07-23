@@ -339,6 +339,7 @@ body div.line[ltype=invite] .message,
 body div.line[ltype=debug] .message,
 body div.line[ltype=dccfiletransfer] .message,
 body div.line[ltype=rawhtml] .message {
+	text-indent: 0;
     padding-left: 145px !important;
 }
 
