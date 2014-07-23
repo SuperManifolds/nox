@@ -200,17 +200,18 @@ div[id=mark] {
 }
 
 body[dir=ltr] div[ltype=action] .sender:before {
-	margin-right: 0.4em;
-}
+	margin-right: 0.6em;
+	font-weight: bold;
+	font-size: 80% !important;
+	content: "●";
 
--body[dir=ltr] div[ltype=action] .sender:after {
-	content: "";
-  	/* margin-right: 0.4em; */
 }
 
 .senderDot {
-	margin-right: 0.4em;
-	color: #b359ff;
+}
+-body[dir=ltr] div[ltype=action] .sender:after {
+	content: "";
+  	/* margin-right: 0.4em; */
 }
 
 body[dir=rtl] div[ltype=action] .sender:after {
