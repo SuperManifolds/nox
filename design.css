@@ -160,6 +160,7 @@ body img {
 
 .inlineImageCell > a {
 	display: inline-block;
+	border: none;
 }
 
 .inlineImageCell .image {
@@ -207,8 +208,6 @@ body[dir=ltr] div[ltype=action] .sender:before {
 
 }
 
-.senderDot {
-}
 -body[dir=ltr] div[ltype=action] .sender:after {
 	content: "";
   	/* margin-right: 0.4em; */
