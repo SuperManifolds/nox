@@ -3,21 +3,18 @@
 
 /* Defined in: "Textual.app -> Contents -> Resources -> JavaScript -> API -> core.js" */
 
-//Optional: Set to true to make /me messages appear in the same color as the username.
-var overrideActions = true;
 var mappedSelectedUsers = new Array();
 
 var NickColorGenerator = (function () {
     function NickColorGenerator(message) {
         var messageContainer = message.children[0].children[1];
         //Start alternative nick colouring procedure
-        var selectNick = messageContainer.children[0];
+        var selectNick = messageContainer.querySelector(".sender");
         selectNick.removeAttribute('colornumber');
         var nickcolor = this.generateColorFromHash(selectNick.getAttribute('nickname'));
         selectNick.style.color = nickcolor;
         var inlineNicks = messageContainer.querySelectorAll('.inline_nickname');
-        if (message.getAttribute('ltype') == 'action' && overrideActions) {
-            selectNick.children[0].style.color = nickcolor;
+        if (message.getAttribute('ltype') == 'action') {
             messageContainer.style.color = nickcolor;
         }
         for (var i = 0, len = inlineNicks.length; i < len; i++) {
