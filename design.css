@@ -250,8 +250,8 @@ body div[ltype="privmsg"] .message {
     color: #fff;
 }
 
-body div[ltype="privmsg"][encrypted="1"] {
-     background: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(166,166,166,.03) 20px, rgba(166,166,166,.03) 40px) !important;
+.encryptionLock + .message {
+     background: repeating-linear-gradient(-45deg, rgba(79, 79, 79, 0.1), rgba(79, 79, 79, 0.1) 20px, rgba(68, 89, 63, 0.3) 20px, rgba(68, 89, 63, 0.3) 40px) !important;
 }
 
 body div[ltype=privmsg] p[ltype=myself] .message {
