@@ -249,10 +249,13 @@ body div[ltype="privmsg"] .message {
     color: #fff;
 }
 
-.encryptionLock + .message {
+body div[ltype="privmsg"][encrypted="true"] {
      background: repeating-linear-gradient(-45deg, rgba(79, 79, 79, 0.1), rgba(79, 79, 79, 0.1) 20px, rgba(68, 89, 63, 0.3) 20px, rgba(68, 89, 63, 0.3) 40px) !important;
 }
 
+body div[ltype="privmsg"][highlight=true][encrypted="true"] {
+	background: repeating-linear-gradient(-45deg, #3b5847, #3b5847 20px, rgba(68, 89, 63, 0.3) 20px, rgba(68, 89, 63, 0.3) 40px) !important;
+}
 body div[ltype=privmsg] p[ltype=myself] .message {
  	color: #fff;
 }
