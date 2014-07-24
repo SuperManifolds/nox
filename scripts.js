@@ -83,8 +83,14 @@ Textual.viewFinishedReload = function() {
 
 Textual.newMessagePostedToView = function (line) {
     var message = document.getElementById('line-' + line);
-	if (message.getAttribute('ltype') == 'privmsg' || message.getAttribute('ltype') == 'action') {
+	if (message.getAttribute('ltype') === 'privmsg' || message.getAttribute('ltype') === 'action') {
         new NickColorGenerator(message);
+    }
+    if (message.getAttribute("encrypted") === "true") {
+        var messageText = message.querySelector(".innerMessage");
+        if (messageText.innerText.indexOf("+OK") !== -1) {
+            message.setAttribute("encrypted", "failed");
+        }
     }
     updateNicknameAssociatedWithNewMessage(message);
 };
