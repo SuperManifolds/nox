@@ -265,6 +265,7 @@ body div[ltype="privmsg"][encrypted="failed"] {
 body div[ltype="privmsg"][highlight=true][encrypted="true"] {
 	background: repeating-linear-gradient(-45deg, #3b5847, #3b5847 20px, rgba(68, 89, 63, 0.3) 20px, rgba(68, 89, 63, 0.3) 40px) !important;
 }
+
 body div[ltype=privmsg] p[ltype=myself] .message {
  	color: #fff;
 }
@@ -504,6 +505,7 @@ body .sender[mtype=myself] {
 
 .sender {
 	cursor: pointer;
+	overflow: hidden;
 }
 
 body div.line[ltype=privmsg]:not(.selectedUser),
