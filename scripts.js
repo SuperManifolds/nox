@@ -7,15 +7,14 @@ var mappedSelectedUsers = new Array();
 
 var NickColorGenerator = (function () {
     function NickColorGenerator(message) {
-        var messageContainer = message.children[0].children[1];
         //Start alternative nick colouring procedure
-        var selectNick = messageContainer.querySelector(".sender");
+        var selectNick = message.querySelector(".sender");
         selectNick.removeAttribute('colornumber');
         var nickcolor = this.generateColorFromHash(selectNick.getAttribute('nickname'));
         selectNick.style.color = nickcolor;
-        var inlineNicks = messageContainer.querySelectorAll('.inline_nickname');
+        var inlineNicks = message.querySelectorAll('.inline_nickname');
         if (message.getAttribute('ltype') == 'action') {
-            messageContainer.style.color = nickcolor;
+            message.querySelector(".message").style.color = nickcolor;
         }
         for (var i = 0, len = inlineNicks.length; i < len; i++) {
             inlineNicks[i].removeAttribute('colornumber');
