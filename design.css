@@ -230,7 +230,6 @@ body div.line[ltype=notice],
 body div.line[ltype=wallops] {
   	z-index: 191;
   	position: relative;
- 	padding: 2px 5px 2px 5px;
 	background-color: #2f3e53;
 	border-bottom: none;
 	border-top: none;
