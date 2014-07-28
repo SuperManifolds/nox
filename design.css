@@ -135,6 +135,7 @@ a:hover {
 	padding: 55px 0.5em 7px;
 	box-shadow: 0 1px 5px #777;
 	border-bottom: 1px solid #404040;
+	-webkit-transition: opacity 0.8s linear;
 	text-shadow: 1px 1px rgba(10, 10, 10, 0.7);
 	background: rgba(60, 60, 60, 0.91);
 	-webkit-transform: translateZ(0);
