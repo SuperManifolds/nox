@@ -138,8 +138,6 @@ a:hover {
 	-webkit-transition: opacity 0.8s linear;
 	text-shadow: 1px 1px rgba(10, 10, 10, 0.7);
 	background: rgba(60, 60, 60, 0.91);
-	-webkit-transform: translateZ(0);
-	-webkit-font-smoothing: subpixel-antialiased;
 }
 
 #topic_bar:hover {
