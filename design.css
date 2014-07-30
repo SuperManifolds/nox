@@ -233,7 +233,7 @@ body[dir=rtl] div[ltype=action] .sender:after {
 /* Historic / Log readback */
 .historic {
 	font-weight: 200;
-	opacity: 0.75;
+	-webkit-filter: brightness(75%);
 	-webkit-filter: grayscale(90%);
 }
 
