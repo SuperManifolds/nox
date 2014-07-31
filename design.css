@@ -4,8 +4,6 @@
 	margin: 0;
 	padding: 0;
 	font-size: 100%;
-	-webkit-hyphens: auto;
-	hyphens: auto;
 	-webkit-word-break: break-word;
 	word-wrap: break-word;
 	-webkit-word-wrap: break-word;
@@ -250,6 +248,7 @@ body div.line[ltype=wallops] {
 }
 
 body div.line[ltype=action] .message {
+	word-break: break-word;
 	padding-top: 1px;
 }
 
