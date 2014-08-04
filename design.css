@@ -328,7 +328,7 @@ body div.line[ltype=action] .message {
 }
 
 body div.line[ltype=action][highlight=true] .message {
-	color: #fff;
+	color: #fff !important;
 }
 
 /* DEBUG/INVITE */
