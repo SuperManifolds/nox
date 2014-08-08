@@ -12,10 +12,5 @@ __Instructions to install (Textual 5+):__
 3.  Open Preferences in Textual and select __Channel View__ in the list to the left.  
 4.  Select __"Nox"__ in the style list.  
 
-__Instructions to install (Textual 4.0 - 4.1.7):__  
-1.  Download the files via Git or the download button to the right.  
-2.  Copy the downloaded folder to _~/Library/Containers/com.codeux.irc.textual/Data/Library/Application Support/Textual IRC/Styles/_  
-3.  Open Preferences in Textual and click the __Styles__ button.  
-4.  Select __"Nox"__ in the style list.  
 
 ![Image of the style](http://alientube.co/nox.jpg)
