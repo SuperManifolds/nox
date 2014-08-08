@@ -1,7 +1,7 @@
 Nox
 ===
 
-__This style is compatible Textual 4.0 and above__
+__This style is compatible Textual 5.0 and above__
 
 Nox (Style for the Textual IRC Client)  
 Based on [Whisper Dark, by Shamil Nunhuck](https://github.com/shamil-nunhuck/textual-whisper-dark)
