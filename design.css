@@ -210,14 +210,6 @@ body[dir=ltr] div[ltype=action] .sender:before {
 
 }
 
--body[dir=ltr] div[ltype=action] .sender:after {
-	content: "";
-  	/* margin-right: 0.4em; */
-}
-
-body[dir=rtl] div[ltype=action] .sender:after {
-	content: "";
-}
 
 /* Historic / Log readback */
 .historic {
