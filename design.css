@@ -175,6 +175,7 @@ body img {
 
 .inlineImageCell .closeButton {
 	background: #000000;
+	cursor: pointer;
 	border-radius: 50%;
 	position: absolute;
 	box-sizing: border-box;
@@ -209,7 +210,6 @@ body[dir=ltr] div[ltype=action] .sender:before {
 	content: "●";
 
 }
-
 
 /* Historic / Log readback */
 .historic {
