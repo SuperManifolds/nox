@@ -88,6 +88,19 @@ Textual.newMessagePostedToView = function (line) {
             message.setAttribute("encrypted", "failed");
         }
     }
+    var getEmbeddedImages = message.querySelectorAll("img");
+    if (getEmbeddedImages) {
+        for (var i = 0, len = getEmbeddedImages.length; i < len; i++) {
+            getEmbeddedImages[i].onload = function(e) {
+                setTimeout(function() {
+                    console.log(e.target.offsetHeight, window.innerHeight);
+                    if (e.target.offsetHeight > (window.innerHeight - 150)) {
+                        e.target.style.height = (window.innerHeight - 150);
+                    }
+                }, 1000);
+            }
+        }
+
     updateNicknameAssociatedWithNewMessage(message);
 };
 
