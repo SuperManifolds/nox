@@ -19,6 +19,10 @@ body {
     font-weight: 200;
 }
 
+p {
+	overflow: visible !important;
+}
+
  body .line {
 	clear: both;
   }
@@ -397,6 +401,7 @@ body span.message {
 	display: table-cell;
 	min-height: 22px;
 	line-height: 22px;
+	overflow: visible !important;
 }
 
 body div.event span.time {
