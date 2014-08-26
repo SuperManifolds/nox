@@ -100,7 +100,6 @@ Textual.newMessagePostedToView = function (line) {
             }
         }
     }
-
     updateNicknameAssociatedWithNewMessage(message);
 };
 
