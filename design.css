@@ -12,33 +12,34 @@
 body {
 	color: #fff;
 	height: 100%;
-	z-index: 100;
+ 	z-index: 100;
 	font-size: 12px;
 	background-color: #1d1d1d;
 	font-family: "Helvetica Neue";
-	font-weight: 200;
+    font-weight: 200;
 }
 
 p {
 	overflow: visible !important;
 }
 
-body .line {
+ body .line {
 	clear: both;
-}
+  }
 
 body div#body_container {
 	height: 100%;
 }
 
 #body_home {
-	overflow-y: scroll;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	width: 100%;
 	z-index: 100;
-	max-height: 99.99%;
+	max-height: 100%;
+	padding-top: 1px;
+	overflow-y: scroll;
 	position: absolute;
 	opacity: 0; /* Set by JavaScript */
 	-webkit-transition: opacity 0.8s linear;
@@ -60,7 +61,7 @@ body[dir=rtl] .senderContainer {
 /* Loading Screen */
 
 #loading_screen {
-	position:fixed;
+	position: fixed;
 	margin: auto;
 	top: 0; left: 0; right: 0; bottom: 0;
 	width: 210px;
@@ -76,19 +77,18 @@ body[dir=rtl] .senderContainer {
 }
 
 #loading_screen progress {
-	margin-top: 5px;
+    margin-top: 5px;
 }
 
 /* Time */
 body[dir=ltr] .time {
-	font-size: 10px !important;
+    font-size: 10px !important;
 	white-space: nowrap;
 	float: right;
 	color: #999;
 	-webkit-user-select: none;
 	font-weight: bold;
 	margin-right: 10px;
-	line-height: 22px;
 	font-style: normal;
 	text-align: right;
 }
@@ -98,21 +98,21 @@ body[dir=ltr] .time {
 }
 
 .encryptionLock img {
-	z-index: 100;
-	position:absolute;
-	top:0;
-	left: 5px;
-	bottom:0;
-	margin:auto;
+    z-index: 100;
+    position:absolute;
+    top:0;
+    left: 5px;
+    bottom:0;
+    margin:auto;
 	height: 12px;
-	width: auto;
+    width: auto;
 }
 
 /* Links */
 
 a {
 	color: #ccc;
-	border-color: #ccc;
+    border-color: #ccc;
 	text-decoration: none;
 	border-bottom: dotted 1px;
 
@@ -179,7 +179,6 @@ body img {
 	float: left;
 	margin: 15px 15px 12px 10px;
 	min-width: 100px;
-	max-width: 90%;
 }
 
 .inlineImageCell .closeButton {
@@ -231,8 +230,8 @@ body[dir=ltr] div[ltype=action] .sender:before {
 body div.line[ltype=ctcp],
 body div.line[ltype=notice],
 body div.line[ltype=wallops] {
-	z-index: 191;
-	position: relative;
+  	z-index: 191;
+  	position: relative;
 	background-color: #2f3e53;
 	border-bottom: none;
 	border-top: none;
@@ -264,7 +263,7 @@ body div[ltype=notice] .message {
 body div.line[ltype=privmsg][highlight=false] {
 	padding: 0;
 	position: relative;
-	min-height: 23px;
+    min-height: 23px;
 }
 
 body div[ltype=privmsg] .senderContainer {
@@ -273,7 +272,7 @@ body div[ltype=privmsg] .senderContainer {
 	width: 134px;
 	border-right: 1px solid rgb(64, 64, 64);
 	padding-right:7px;
-	background-color: #1d1d1d;
+    background-color: #1d1d1d;
 	text-align:right;
 	display:inline-block;
 	overflow: auto;
@@ -319,7 +318,7 @@ body div[ltype=action] .senderContainer {
 	font-weight: 700;
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid transparent;
-	background-color: #1d1d1d;
+    background-color: #1d1d1d;
 	height:22px;
 	padding-right: 7px;
 	text-align:right;
@@ -342,10 +341,10 @@ body div.line[ltype=debug],
 body div.line[ltype=dccfiletransfer],
 body div.line[ltype=rawhtml] {
 	color: #eee;
-	z-index: 190;
+  	z-index: 190;
 	background: #2f2f2f;
-	position: relative;
-	padding: 2px 0 2px 0;
+  	position: relative;
+ 	padding: 2px 0 2px 0;
 	border-top: 1px solid #393939;
 	border-bottom: 1px solid #393939;
 }
@@ -356,7 +355,7 @@ body div.line[ltype=dccfiletransfer] .message,
 body div.line[ltype=rawhtml] .message ,
 body div.line[ltype=ctcp] .message {
 	text-indent: 0;
-	padding-left: 145px !important;
+    padding-left: 145px !important;
 }
 
 /* Message of the Day (MOTD) */
@@ -399,20 +398,17 @@ body span.message {
 	padding-right: 25px;
 	display: table-cell;
 	min-height: 22px;
-	line-height: 22px;
 	overflow: visible !important;
 }
 
 body div.event span.time {
 	color: #999;
-	line-height: 19px;
 	display: table-cell;
 }
 
 body div.event span.message {
 	min-height: 19px;
 	text-indent: -20px;
-	line-height: 19px;
 	padding-left: 0;
 }
 
@@ -425,11 +421,11 @@ body div.line[ltype=topic],
 body div.line[ltype=kill],
 body div.line[ltype=kick],
 body div.line[ltype=website] {
-	font-size: 85%;
+    font-size: 85%;
 	min-height: 19px;
 	padding-left: 145px;
 	color: #a5b6ce;
-	background: #1d1d1d;
+    background: #1d1d1d;
 }
 
 body div.line[ltype=topic] span.message {
@@ -446,9 +442,9 @@ body div.line[ltype=kick] {
 
 body[dir=ltr] div[ltype=join] .message:before {
 	content: "→";
-	color: #0c0;
+  	color: #0c0;
 	margin-left:3px;
-	margin-right: 5px;
+    margin-right: 5px;
 }
 
 
@@ -456,9 +452,9 @@ body[dir=ltr] div[ltype=kick] .message:before,
 body[dir=ltr] div[ltype=part] .message:before,
 body[dir=ltr] div[ltype=quit] .message:before {
 	content: "←";
-	color: #e00;
+  	color: #e00;
 	margin-left:3px;
-	margin-right: 5px;
+    margin-right: 5px;
 }
 
 body[dir=ltr] div[ltype=nick] .message:before {
@@ -466,7 +462,7 @@ body[dir=ltr] div[ltype=nick] .message:before {
 	color: #37be34;
 	font-weight: 700;
 	margin-left: 8px;
-	margin-right: 5px;
+    margin-right: 5px;
 }
 
 body[dir=ltr] div[ltype=mode] .message:before {
@@ -474,23 +470,23 @@ body[dir=ltr] div[ltype=mode] .message:before {
 	color: #2cb6f6;
 	font-weight: 700;
 	margin-left: 8px;
-	margin-right: 5px;
+    margin-right: 5px;
 }
 
 body[dir=rtl] div[ltype=join] .message:before {
 	content: "→";
-	color: #0c0;
+  	color: #0c0;
 	margin-left:3px;
-	margin-right: 5px;
+    margin-right: 5px;
 }
 
 body[dir=rtl] div[ltype=kick] .message:before,
 body[dir=rtl] div[ltype=part] .message:before,
 body[dir=rtl] div[ltype=quit] .message:before {
 	content: "←";
-	color: #e00;
+  	color: #e00;
 	margin-left:3px;
-	margin-right: 5px;
+    margin-right: 5px;
 }
 
 /* Nickname Colors */
@@ -512,32 +508,32 @@ body .sender[mtype=myself] {
 
 body div.line[ltype=privmsg]:not(.selectedUser),
 body div.line[ltype=action]:not(.selectedUser) {
-	transition-property: background-color;
+    transition-property: background-color;
 	transition-duration: 0.5s, 0.5s, 0.5s;
 }
 
 body div.line[ltype=privmsg] .time:not(.selectedUser),
 body div.line[ltype=action] .time:not(.selectedUser) {
-	transition: color 0.5s;
+    transition: color 0.5s;
 }
 
 body div.line.selectedUser[highlight=false] .time {
-	transition: color 0.5s ease-in;
+    transition: color 0.5s ease-in;
 	color: #aaa;
 }
 
 body div.line.selectedUser[highlight=false] {
-	transition-property: background-color;
+    transition-property: background-color;
 	transition-duration: 0.5s, 0.5s, 0.5s;
-	z-index: 190;
-	position: relative;
+  	z-index: 190;
+  	position: relative;
 	background-color: #2f3e53;
 }
 
 body div.line[ltype=privmsg][highlight=true],
 body div.line[ltype=action][highlight=true] {
-	z-index: 191;
-	position: relative;
+  	z-index: 191;
+  	position: relative;
 	font-weight: normal;
 	background-color: #3b5847;
 }
