@@ -284,6 +284,10 @@ body div[ltype=privmsg] .senderContainer {
 	text-overflow: ellipsis;
 }
 
+body .senderContainer .swrapper {
+	font-size: 1px !important;
+}
+
 body div[ltype="privmsg"] .message {
 	word-break: break-word;
 	color: #fff;
