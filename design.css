@@ -285,7 +285,8 @@ body div[ltype=privmsg] .senderContainer {
 }
 
 body .senderContainer .swrapper {
-	font-size: 1px !important;
+	font-size: 0px !important;
+	opacity: 0;
 }
 
 body div[ltype="privmsg"] .message {
