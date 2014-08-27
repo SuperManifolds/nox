@@ -276,7 +276,7 @@ body div[ltype=privmsg] .senderContainer {
     background-color: #1d1d1d;
 	text-align:right;
 	display:inline-block;
-	overflow: auto;
+	overflow: hidden;
 	position: absolute;
 	top: 0;
 	bottom: 0;
