@@ -41,7 +41,7 @@ var NickColorGenerator = (function () {
         var cleaned = this.sanitiseNickname(nick);
         var h = 0;
         for(var i = 0; i < cleaned.length; i++) {
-            h = cleaned.charCodeAt(i) + (h << 6) + (h << 16) - h;
+            h = cleaned.charCodeAt(i) + (h << 7) + (h << 16) - h;
         }
         return h;
     };
