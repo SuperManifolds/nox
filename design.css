@@ -38,10 +38,6 @@ p {
 	-webkit-transition: opacity 0.8s linear;
 }
 
-#body_home {
-	max-height: 100%;
-}
-
 body[dir=rtl] .senderContainer {
 	display: inline-block;
 }
